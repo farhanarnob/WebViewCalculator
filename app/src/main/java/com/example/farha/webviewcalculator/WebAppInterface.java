@@ -9,6 +9,7 @@ public class WebAppInterface {
     String displayValue;
     CalculationUtilities calculationUtilities = new CalculationUtilities();
 
+
     /** Instantiate the interface and set the context */
     WebAppInterface(Context c) {
         wa = (MainActivity) c;

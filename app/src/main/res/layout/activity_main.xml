@@ -5,6 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.farha.webviewcalculator.MainActivity">
+
+    <Button
+        android:id="@+id/goto_local"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="Goto Loacal CalCalator" />
     <WebView
         android:id="@+id/web_view"
         android:layout_width="match_parent"
