@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <style>
+		form {
+			width: 315px;
+			padding: 0 15px 15px;
+			background: #ddd;
+			-webkit-box-shadow: 0 2px 5px 2px rgba(0,0,0,.6);
+			box-shadow: 0 2px 5px 2px rgba(0,0,0,.6);
+		}
+
+		input[type="text"]{
+			font-family: 'Orbitron', sans-serif;
+			box-sizing:border-box;
+			width: 100%;
+			margin-top: 30px;
+			padding: 5px 5px;
+			font-size: 36px;
+			text-align: right;
+		}
+
+		input[type="button"] {
+			width: 75px;
+			height: 67.9px;
+			margin: 0 0 5px 0;
+
+			color: #fff;
+			font-size: 24px;
+			font-weight: 300;
+			background: #aaa;
+		}
+
+		hr {
+			margin: 15px 0;
+			height: 1px;
+		}
+	</style>
+</head>
+<body>
+<form action="" name="calc">
+    <input id="screen" type="text" name="screen" disabled> <br>
+    <hr>
+    <input type="button" value="&radic;" onclick="calc.screen.value = Math.sqrt(calc.screen.value);">
+    <input type="button" value="CE" onclick="calc.screen.value = ''">
+    <input type="button" value="C" onclick="calc.screen.value = ''">
+    <input type="button" value="&larr;" onclick="calc.screen.value = calc.screen.value.slice(0,-1);"> <br>
+
+    <input type="button" value="7" onclick="numberValue('7')">
+    <input type="button" value="8" onclick="numberValue('8')">
+    <input type="button" value="9" onclick="numberValue('9')">
+    <input type="button" value="+" onclick="numberValue('+')">
+
+    <br>
+
+    <input type="button" value="4" onclick="numberValue('4')">
+    <input type="button" value="5" onclick="numberValue('5')">
+    <input type="button" value="6" onclick="numberValue('6')">
+    <input type="button" value="-" onclick="numberValue('-')">
+
+    <br>
+
+    <input type="button" value="1" onclick="numberValue('1')">
+    <input type="button" value="2" onclick="numberValue('2')">
+    <input type="button" value="3" onclick="numberValue('3')">
+    <input type="button" value="*" onclick="numberValue('*')">
+
+    <br>
+
+    <input type="button" value="0" onclick="numberValue('0')">
+    <input type="button" value="." onclick="numberValue('.')">
+    <input type="button" value="=" onclick="calc.screen.value = eval(calc.screen.value)">
+    <input type="button" value="/" onclick="numberValue('/')"> <br>
+</form>
+</body>
+</html>
+
+<script type="text/javascript">
+    function screenValue(screenData) {
+        document.getElementById("screen").value += screenData;
+    }
+    function numberValue(value) {
+        Android.button_number_operator(value);
+    }
+
+</script>
