@@ -44,7 +44,7 @@
 <form action="" name="calc">
     <input id="screen" type="text" name="screen" disabled> <br>
     <hr>
-    <input type="button" value="&radic;" onclick="calc.screen.value = Math.sqrt(calc.screen.value);">
+    <input type="button" value="AIUB">
     <input type="button" value="CE" onclick="calc.screen.value = ''">
     <input type="button" value="C" onclick="calc.screen.value = ''">
     <input type="button" value="&larr;" onclick="calc.screen.value = calc.screen.value.slice(0,-1);"> <br>
@@ -72,7 +72,7 @@
 
     <input type="button" value="0" onclick="numberValue('0')">
     <input type="button" value="." onclick="numberValue('.')">
-    <input type="button" value="=" onclick="calc.screen.value = eval(calc.screen.value)">
+    <input type="button" value="=" onclick="calculation(calc.screen.value)">
     <input type="button" value="/" onclick="numberValue('/')"> <br>
 </form>
 </body>
@@ -82,8 +82,14 @@
     function screenValue(screenData) {
         document.getElementById("screen").value += screenData;
     }
+    function screenValueResult(screenData) {
+        document.getElementById("screen").value = screenData;
+    }
     function numberValue(value) {
         Android.button_number_operator(value);
+    }
+    function calculation(value) {
+        Android.calculation(value);
     }
 
 </script>
